@@ -7,7 +7,6 @@ import * as wishlistService from '../../services/wishlistService'
 
 const ItemCard = ({ item, wishlistId, handleDeleteItem, user, author }) => {
   const [itemPurchase, setItemPurchase] = useState(false)
-  console.log(item)
   const handlePurchaseItem = async (itemId, wishlistId) => {
     const updatedItem = await wishlistService.updatePurchased(itemId, wishlistId)
     setItemPurchase(updatedItem.purchased.bought)
